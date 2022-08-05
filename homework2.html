@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        fieldset{
+            margin-right: 60%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div ></div>
+    <h2>ฟอร์มจองทัวร์</h2>
+    <form action="../form-echo.php">
+        <fieldset width="300px" height="400px">
+            <legend>ข้อมูลทั่วไป</legend>
+            <p><legend>ชื่อ-สกุล :</legend>
+            <input type="text" name="name" placeholder="กรอกชื่อ-สกุล" pattern="^[ก-๏\s]+$" required>*</p>
+
+            <p><legend>email :</legend>
+            <input type="email" name="email" required>*</p>
+
+            <p><legend>โทรศัพท์ :</legend>
+            <input type="tel" name="tel" pattern="[0-9]{9}" value="+66" required>*</p>
+        
+            <p><legend>ที่อยู่ :</legend>
+            <textarea rows="3" cols="40" name="address"></textarea> </p>
+         
+            <legend>รหัสไปรณีย์ : <input type="text" size="5" pattern="[0-9]{5} "> </legend>
+             
+            <br><legend>รูปผู้จอง : <input type="file" > </legend>    
+        </fieldset>
+        <fieldset>
+            <legend>ข้อมูลเข้าสู่ระบบ</legend>
+            <p><legend>Username :</legend>
+            <input type="text" name="username"  pattern="\w{8,}" required> <br>
+            <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ_ตั้งแต่ 8 ตัวขึ้นไป</i> </p>
+
+            <p><legend>Password :</legend>
+            <input type="password" name="password" pattern="[\dw @£$¥èéùìòÇØøÅåΔ_ΦΓΛΩΠΨΣΘΞ\^{}\\\[~\]|€ÆæßÉ!#¤%&'()*+,\-.\/:;<=>?¡ÄÖÑÜ§¿äöñüà]{8,}" required> <br>
+            <i>ประกอบด้วยอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i> </p>
+        </fieldset>
+        <fieldset>
+            <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+            <p> แพคเก็จทัวร์ : 
+                <select name="tour">
+                    <option value="">---เลือกทัวร์ที่ต้องการ</option>
+                    <option value="Japan">Japan ญี่ปุ่น</option>
+                    <option value="China">China  จีน</option>
+                    <option value="Korea">Korea  เกาหลี</option>
+                    <option value="Canada">Canada  แคนนาดา</option>
+                    <option value="USA">USA  สหรัฐอเมริกา</option>     
+                </select>
+            </p>
+
+            <p><legend>วันที่เดินทาง : <input type="date" name="date" pattern="{8,}"> </legend> </p>
+
+            <p><legend>จำนวนผู้เดินทาง : <input type="text" name="num" size="2" pattern="(1|2|3|4|5|6|7|8|9|10)"> </legend> </p>
+
+            <p>
+                <legend>เน้นการท่องเที่ยวแบบใด ?</legend>
+                    <input type="checkbox" id="scales" name="type" value="shopping">
+                    <label for="shopping">ช้อปปิ้ง</label>
+                    <br>           
+                    <input type="checkbox" id="horns" name="type" value="nature">
+                    <label for="nature">ธรรมชาติ</label> 
+                    <br>
+                    <input type="checkbox" id="scales" name="type" value="sea">
+                    <label for="sea">ทะเล</label>
+                    <br>
+            </p>
+        </fieldset>
+        <legend> ยอมรับเงื่อนไขและข้อตกลง </legend>  
+        <input type="radio" id="yes" name="confirm" value="agree" checked> <label for="yes">I agree</label>
+        <input type="radio" id="no" name="confirm" value="disagree"> <label for="disagree">I disagree</label>
+            
+        <input type="submit" value="จอง"></p>
+    </form>
+</body>
+</html>
